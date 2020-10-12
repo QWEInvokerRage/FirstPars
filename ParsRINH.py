@@ -4,7 +4,6 @@ import fake_useragent
 
 # headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1; rv:40.0) Gecko/20100101 Firefox/40.0', 'accept': '*/*'}
 session = requests.Session()
-
 user = fake_useragent.UserAgent().random
 header = {'user-agent': user}
 
@@ -21,12 +20,11 @@ def datasGen(datas):
         datas[key] = input("Введите" + " " + key + ":")
 
     return datas
-
-
-datas = datasGen(datas)
+datasGen(datas)
+# datas = datasGen(datas)
 
 autorize = 'https://portfolio.rsue.ru/login/index.php'
-# headers=header
+
 responce = session.post(autorize, data=datas, headers=header).text
 # print(responce)
 
@@ -36,11 +34,12 @@ profile_responce = session.get(profile_page).text
 
 # print(profile_responce)
 
-def soupovarka():
+def soupovarka(profile_responce):
     soup = BeautifulSoup(profile_responce, 'html.parser')
     subjects = str(soup.find_all(class_="simpletable"))
     return subjects
 
 with open('resultWR.txt', 'w', encoding="utf-8") as file:
-    file.write(soupovarka())
-print(soupovarka())
+    file.write(soupovarka(profile_responce))
+# print(soupovarka())
+# print(datas)
