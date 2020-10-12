@@ -4,8 +4,13 @@ import fake_useragent
 
 # headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1; rv:40.0) Gecko/20100101 Firefox/40.0', 'accept': '*/*'}
 session = requests.Session()
-
-
+print("Введите данные для авторизации на сайте.")
+def datasGen():
+    data = {
+        'username': None,
+            'password': None,
+            'loginbtn': None
+    }
 
 user = fake_useragent.UserAgent().random
 header = {'user-agent': user}
