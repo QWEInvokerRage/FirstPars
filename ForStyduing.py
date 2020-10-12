@@ -1,5 +1,5 @@
-import requests
+from bs4 import BeautifulSoup
 
-s = requests.Session()
-r = s.get('https://httpbin.org/')
-print(r.text)
+soup = BeautifulSoup('<b class="boldest">Extremely bold</b>')
+tag = soup.b
+print(tag)
