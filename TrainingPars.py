@@ -14,11 +14,20 @@ def datasGen():
 
 user = fake_useragent.UserAgent().random
 header = {'user-agent': user}
-datas = {
-    'username': 'kpobegaylo@mail.ru',
-    'password': '632',
-    'loginbtn': 'Вход'
+# datas = {
+#     'username': 'kpobegaylo@mail.ru',
+#     'password': '632',
+#     'loginbtn': 'Вход'
+# }
+data = {
+    'username': None,
+    'password': None,
+    'loginbtn': None
 }
+
+def datasGen():
+    for key in data:
+        data[key]=input("Введите" + key)
 
 autorize = 'https://portfolio.rsue.ru/login/index.php'
 

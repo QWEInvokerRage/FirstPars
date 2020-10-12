@@ -1,5 +1,13 @@
-from bs4 import BeautifulSoup
+datas = {
+    'username': '',
+    'password': '',
+    'loginbtn': ''
+}
 
-soup = BeautifulSoup('<b class="boldest">Extremely bold</b>')
-tag = soup.b
-print(tag)
+def datasGen(datas):
+    for key in datas:
+        datas[key] = input("Введите"+" " + key+":")
+
+    return datas
+
+datas = datasGen(datas)
