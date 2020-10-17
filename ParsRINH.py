@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import fake_useragent
+import TrainingPars
 
 # headers = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1; rv:40.0) Gecko/20100101 Firefox/40.0', 'accept': '*/*'}
 session = requests.Session()
@@ -43,3 +44,4 @@ with open('resultWR.txt', 'w', encoding="utf-8") as file:
     file.write(soupovarka(profile_responce))
 # print(soupovarka())
 # print(datas)
+print(TrainingPars.ParsGrade)
